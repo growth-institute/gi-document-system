@@ -1,0 +1,121 @@
+/* ============================================================
+   GI · Sistema de Diseño de DOCUMENTOS — Base
+   Estructura de página + componentes. Todo sobre fondo claro.
+   ============================================================ */
+@page { size: 816px 1056px; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--n300); }
+
+/* ---------- Página ---------- */
+.doc-page {
+  position: relative;
+  width: var(--doc-w); height: var(--doc-h);
+  background: var(--n0);
+  color: var(--n900);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.55;
+  padding: var(--doc-mt) var(--doc-mx) var(--doc-mb);
+  overflow: hidden;
+  page-break-after: always;
+}
+.doc-page:last-child { page-break-after: auto; }
+
+/* Encabezado y pie corridos (folio permitido en documentos) */
+.doc-header {
+  position: absolute; top: 44px; left: var(--doc-mx); right: var(--doc-mx);
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 10px; border-bottom: 1px solid var(--n200);
+  font-size: var(--t-source); letter-spacing: .08em; text-transform: uppercase; color: var(--n500);
+}
+.doc-header .ico { width: 20px; height: 20px; fill: #000; }  /* isotipo en su tono original */
+.doc-footer {
+  position: absolute; bottom: 44px; left: var(--doc-mx); right: var(--doc-mx);
+  display: flex; justify-content: space-between;
+  font-size: var(--t-source); letter-spacing: .04em; color: var(--n400);
+}
+
+/* Dos columnas opcionales para cuerpo denso */
+.doc-cols { column-count: 2; column-gap: var(--col-gap); }
+
+/* ---------- Tipografía ---------- */
+.eyebrow {
+  font-family: var(--font-body); font-weight: 600; font-size: var(--t-eyebrow);
+  letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+  margin: 0 0 10px;
+}
+.d-h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--t-h1); line-height: 1.15; color: var(--n900); margin: 0 0 14px; }
+.d-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--t-h2); line-height: 1.2; color: var(--primary); margin: 26px 0 10px; }
+.d-h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--t-h3); line-height: 1.25; color: var(--n900); margin: 18px 0 6px; }
+.d-lead { font-size: var(--t-lead); line-height: 1.5; color: var(--n700); margin: 0 0 16px; }
+.d-body, .doc-page p { font-size: var(--t-body); line-height: 1.55; color: var(--n800); margin: 0 0 12px; }
+.d-small { font-size: var(--t-small); color: var(--n600); }
+.d-caption { font-size: var(--t-caption); color: var(--n500); }
+a, .d-link { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--n300); }
+
+/* Listas: viñeta/numeración en color de marca */
+.doc-page ul, .doc-page ol { margin: 0 0 14px; padding-left: 1.1em; }
+.doc-page li { margin: 0 0 6px; padding-left: .3em; }
+.doc-page ul li::marker { color: var(--accent); }
+.doc-page ol li::marker { color: var(--primary); font-weight: 700; }
+
+/* ---------- Componentes ---------- */
+
+/* Nota / callout */
+.d-callout {
+  background: var(--n100); border-left: 4px solid var(--accent);
+  border-radius: 8px; padding: 16px 20px; margin: 16px 0;
+}
+.d-callout .k { font-family: var(--font-display); font-weight: 600; font-size: var(--t-h3); margin: 0 0 4px; color: var(--n900); }
+
+/* Pullquote / cita destacada */
+.d-pull {
+  font-family: var(--font-display); font-weight: 600; font-size: var(--t-h2);
+  line-height: 1.3; color: var(--primary); margin: 20px 0; padding-left: 22px;
+  border-left: 4px solid var(--accent);
+}
+.d-pull .who { display: block; font-family: var(--font-body); font-weight: 500; font-size: var(--t-small); color: var(--n500); margin-top: 8px; }
+
+/* Dato clave / stat */
+.d-stat { display: flex; align-items: baseline; gap: 14px; margin: 12px 0; }
+.d-stat .num { font-family: var(--font-display); font-weight: 700; font-size: 44px; line-height: 1; color: var(--primary); }
+.d-stat .lbl { font-size: var(--t-small); color: var(--n600); max-width: 240px; }
+.d-stat.pos .num { color: var(--data-positive); }
+.d-stat.neg .num { color: var(--data-negative); }
+
+/* Tabla */
+.d-table { width: 100%; border-collapse: collapse; font-size: var(--t-small); margin: 14px 0; }
+.d-table th { background: var(--primary); color: var(--n0); text-align: left; padding: 9px 12px; font-family: var(--font-body); font-weight: 600; }
+.d-table td { padding: 9px 12px; border-bottom: 1px solid var(--n200); }
+.d-table tbody tr:nth-child(even) { background: var(--n100); }
+
+/* Figura + pie */
+.d-figure { margin: 16px 0; }
+.d-figure .frame { background: var(--n100); border: 1px solid var(--n200); border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; color: var(--n400); font-size: var(--t-small); }
+.d-figure figcaption { margin-top: 8px; font-size: var(--t-caption); color: var(--n500); }
+
+/* Aside / barra lateral */
+.d-aside { background: var(--n100); border-radius: 10px; padding: 18px 20px; }
+.d-aside .k { font-family: var(--font-display); font-weight: 600; font-size: var(--t-h3); color: var(--primary); margin: 0 0 6px; }
+
+/* Reglas y ayudas de datos */
+.d-rule { height: 3px; width: 56px; background: var(--accent); border: 0; border-radius: 2px; margin: 0 0 20px; }
+.c-1{color:var(--data-1)} .c-2{color:var(--data-2)} .c-3{color:var(--data-3)} .c-4{color:var(--data-4)}
+.c-pos{color:var(--data-positive)} .c-neg{color:var(--data-negative)}
+
+/* ---------- Portada ---------- */
+.doc-cover { display: flex; flex-direction: column; justify-content: center; padding: var(--doc-mx); }
+.doc-cover .masthead { position: absolute; top: 0; left: 0; right: 0; height: 14px; background: var(--primary); }
+.doc-cover .logo { width: 220px; height: 55px; fill: var(--ink); position: absolute; top: 64px; left: var(--doc-mx); }
+.doc-cover .t { font-family: var(--font-display); font-weight: 700; font-size: var(--t-cover); line-height: 1.05; color: var(--n900); margin: 0 0 14px; }
+.doc-cover .t .o { color: var(--accent); }
+.doc-cover .sub { font-family: var(--font-display); font-weight: 500; font-size: var(--t-h2); color: var(--n600); }
+.doc-cover .meta { position: absolute; left: var(--doc-mx); bottom: 64px; font-size: var(--t-source); letter-spacing: .06em; text-transform: uppercase; color: var(--n500); }
+
+/* ---------- Portada de sección ---------- */
+.doc-section { background: var(--n100); display: flex; flex-direction: column; justify-content: center; }
+.doc-section .no { font-family: var(--font-display); font-weight: 700; font-size: 64px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+.doc-section .t { font-family: var(--font-display); font-weight: 700; font-size: var(--t-h1); color: var(--n900); margin: 0; }
+
+/* ---------- Calidad ---------- */
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }

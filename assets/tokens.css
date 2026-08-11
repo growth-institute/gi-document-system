@@ -1,0 +1,46 @@
+/* ============================================================
+   GI · Sistema de Diseño de DOCUMENTOS — Tokens
+   Solo marca maestra Growth Institute. Sin colores de cursos
+   (SU, ImpactX, otros MBC) ni semántica de framework.
+   Fondo claro por defecto; los colores viven en los elementos.
+   Unidades de tipografía en px sobre página Carta @96dpi (pt×1.333).
+   ============================================================ */
+:root {
+  /* ---- Marca GI ---- */
+  --primary:   #1F4FD8;   /* azul GI: encabezados, tabla, enlaces */
+  --secondary: #1A30D6;   /* azul secundario: degradados/hover */
+  --accent:    #1F4FD8;   /* ACENTO EN AZUL (overlines, viñetas, reglas) */
+  --accent-2:  #897AEB;   /* lavanda: acento terciario / datos */
+  --ink:       #081022;   /* tinta de marca (casi negro azulado) */
+
+  /* ---- Neutros (tinte azul ~220°) ---- */
+  --n0:#FFFFFF; --n100:#EFF2F8; --n200:#DFE4EF; --n300:#C6CFDE; --n400:#9DA9BE;
+  --n500:#7C89A2; --n600:#5B6986; --n700:#414E68; --n800:#273146; --n900:#141A2A;
+
+  /* ---- Datos / gráficos ---- */
+  --data-1:#1F4FD8; --data-2:#4FC8DC; --data-3:#FFA500; --data-4:#897AEB;
+  --data-positive:#8FC93A; --data-negative:#D64045; --data-neutral:#C6CFDE;
+
+  /* ---- Tipografía ---- */
+  --font-display:"Plus Jakarta Sans",system-ui,sans-serif; /* títulos */
+  --font-body:"Plus Jakarta Sans",system-ui,sans-serif;    /* cuerpo */
+
+  /* Escala tipográfica de documento (px @96dpi) */
+  --t-cover:53px;   /* portada  ~40pt */
+  --t-h1:32px;      /* título de sección ~24pt */
+  --t-h2:23px;      /* subtítulo ~17pt */
+  --t-h3:17px;      /* apartado ~13pt */
+  --t-lead:17px;    /* entradilla ~13pt */
+  --t-body:14px;    /* cuerpo ~10.5pt */
+  --t-small:12px;   /* secundario ~9pt */
+  --t-caption:11px; /* pie / caption ~8.5pt */
+  --t-eyebrow:12px; /* overline ~9pt (mayúsculas + tracking) */
+  --t-source:11px;  /* fuente / folio ~8pt */
+
+  /* ---- Página (Carta 8.5×11 in @96dpi) ---- */
+  --doc-w:816px; --doc-h:1056px;
+  --doc-mx:84px;   /* margen lateral */
+  --doc-mt:110px;  /* margen superior (deja aire para encabezado) */
+  --doc-mb:92px;   /* margen inferior (deja aire para pie) */
+  --col-gap:32px;
+}
